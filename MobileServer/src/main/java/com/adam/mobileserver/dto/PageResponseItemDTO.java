@@ -6,11 +6,15 @@ import java.util.stream.IntStream;
 
 import org.springframework.data.domain.Pageable;
 
-import com.adam.mobileserver.model.Item;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PageResponseItemDTO {
 	private String error;
 	
