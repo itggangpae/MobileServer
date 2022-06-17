@@ -1,6 +1,7 @@
 package com.adam.mobileserver.service;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.http.ResponseEntity;
 
 import com.adam.mobileserver.dto.MemberDTO;
 import com.adam.mobileserver.model.Member;
@@ -12,6 +13,7 @@ public interface MemberService {
 	public MemberDTO getMemer(MemberDTO memberDTO);
 	public String updateMember(MemberDTO dto);
 	public String deleteMember(MemberDTO dto);
+	public ResponseEntity<Object> download(String path);
 	
 	//DTO 클래스의 객치를 Model 클래스의 객체로 변환
 	public default Member dtoToEntity(MemberDTO dto) {

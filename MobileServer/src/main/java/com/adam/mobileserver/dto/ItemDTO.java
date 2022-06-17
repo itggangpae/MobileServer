@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDTO {
+	private String error;
+	
 	private Long itemid;
 	private String itemname;
 	private Integer price;
