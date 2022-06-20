@@ -1,5 +1,8 @@
 package com.adam.mobileserver.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -72,6 +75,30 @@ public class ItemController {
 		}
 		
 		return ResponseEntity.ok().body(response);
+	}
+	
+	//데이터 수정
+	@PostMapping("update")
+	public ResponseEntity<?> updateItem(ItemDTO dto){
+		ItemDTO response = null;
+		try {
+			Long itemid = itemService.updateItem(dto);
+			response = ItemDTO.builder().itemid(itemid).build();
+		}catch(Exception e) {
+			response = ItemDTO.builder().error(e.getMessage()).build();
+		}
+			return ResponseEntity.ok().body(response);
+	}
+	
+	//마지막 수정 시간을 전송
+	@GetMapping("updatedate")
+	public ResponseEntity<?> updatetime(){
+		String updatedate = itemService.updatedate();
+		//별도의 DTO가 없어서 Map을 이용해서 저장
+		Map<String, String> map = new HashMap<>();
+		map.put("updatedate", updatedate);
+		
+		return ResponseEntity.ok().body(updatedate);
 	}
 	
 }

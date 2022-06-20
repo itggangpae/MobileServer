@@ -73,10 +73,6 @@ public class MemberServiceImpl implements MemberService {
 		MultipartFile uploadFile = dto.getImage();
 		//전송된 파일이 있다면
 		if(uploadFile.isEmpty() == false) {
-			//이미지 파일 만 업로드하기 위해서 이미지 파일이 아니면 작업 중단
-			if(uploadFile.getContentType().startsWith("image") == false) {
-				return null;
-			}
 			//원본 파일의 파일 이름 찾아오기
 			String originalName = uploadFile.getOriginalFilename();
 			String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
@@ -158,10 +154,6 @@ public class MemberServiceImpl implements MemberService {
 		MultipartFile uploadFile = dto.getImage();
 		//전송된 이미지가 있다면 파일 업로드
 		if(dto.getImage().isEmpty() == false) {
-			//이미지 파일 만 업로드하기 위해서 이미지 파일이 아니면 작업 중단
-			if(uploadFile.getContentType().startsWith("image") == false) {
-				return null;
-			}
 			//원본 파일의 파일 이름 찾아오기
 			String originalName = uploadFile.getOriginalFilename();
 			String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
