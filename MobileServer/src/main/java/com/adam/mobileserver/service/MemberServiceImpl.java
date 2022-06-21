@@ -92,7 +92,7 @@ public class MemberServiceImpl implements MemberService {
 				System.out.println(e.getLocalizedMessage());
 			}
 			//이미지 경로를 DTO에 설정
-			dto.setImageurl(realUploadPath + File.separator + uuid + fileName);
+			dto.setImageurl(realUploadPath + "/" + uuid + fileName);
 		}
 		member = dtoToEntity(dto);
 		memberRepository.save(member);
@@ -173,7 +173,7 @@ public class MemberServiceImpl implements MemberService {
 				System.out.println(e.getLocalizedMessage());
 			}
 			//이미지 경로를 DTO에 설정
-			dto.setImageurl(realUploadPath + File.separator + uuid + fileName);
+			dto.setImageurl(realUploadPath + "/" + uuid + fileName);
 		}else {
 			//전송된 이미지가 없다면 이전 이미지 사용
 			dto.setImageurl(getMemer(dto).getImageurl());

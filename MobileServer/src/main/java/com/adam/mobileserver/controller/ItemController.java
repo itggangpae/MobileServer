@@ -98,7 +98,7 @@ public class ItemController {
 		Map<String, String> map = new HashMap<>();
 		map.put("updatedate", updatedate);
 		
-		return ResponseEntity.ok().body(updatedate);
+		return ResponseEntity.ok().body(map);
 	}
 	
 }

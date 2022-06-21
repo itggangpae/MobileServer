@@ -96,7 +96,7 @@ public class ItemServiceImpl implements ItemService {
 				//파일 업로드
 				uploadFile.transferTo(savePath);
 				//이미지 경로를 DTO에 설정
-				dto.setPictureurl(realUploadPath + File.separator + uuid + fileName);
+				dto.setPictureurl(realUploadPath + "/" + uuid + fileName);
 			}catch(Exception e) {
 				System.out.println(e.getLocalizedMessage());
 			}
@@ -158,7 +158,7 @@ public class ItemServiceImpl implements ItemService {
 				e.printStackTrace();
 			}
 			//파일의 경로를 저장
-			dto.setPictureurl(realUploadPath + File.separator + uuid + fileName);
+			dto.setPictureurl(realUploadPath + "/" + uuid + fileName);
 			
 		}else {
 			//업로드할 파일이 없을 때 이전 내용을 그대로 적용
@@ -213,5 +213,4 @@ public class ItemServiceImpl implements ItemService {
 			return null;
 		}
 	}
-
 }
