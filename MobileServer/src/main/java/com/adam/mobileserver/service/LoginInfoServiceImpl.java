@@ -82,8 +82,7 @@ public class LoginInfoServiceImpl implements LoginInfoService {
 							//주소 설정
 							dto.setAddress(address_name);
 						}
-					}
-							
+					}	
 				}
 			}catch(Exception e) {
 				System.out.println("데이터 가져오기 에러" + e.getLocalizedMessage());

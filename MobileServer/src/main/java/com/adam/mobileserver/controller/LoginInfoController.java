@@ -24,6 +24,5 @@ public class LoginInfoController {
 		loginInfoService.registerLoginInfo(dto);
 		response ="성공";
 		return ResponseEntity.ok().body(response);
-		
 	}
 }
